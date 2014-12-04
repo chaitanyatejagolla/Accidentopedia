@@ -21,7 +21,7 @@ public class ChartActivity extends Activity {
 		Intent intent = getIntent();
         String chartType = intent.getStringExtra("URL");
         web = (WebView) findViewById(R.id.web);
-       
+       web.getSettings().setSupportZoom(true);
         web.getSettings().setJavaScriptEnabled(true);
         Log.d("url",AppConstants.URL1+chartType);
         web.loadUrl(AppConstants.URL1+chartType);

@@ -62,7 +62,7 @@ static double lngi;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 super.onCreate(savedInstanceState);
-setContentView(R.layout.activity_main);
+setContentView(R.layout.activity_main1);
 // callEmergency();
 StrictMode.setThreadPolicy(policy);
 final Spinner spinner = (Spinner) findViewById(R.id.spinner1);

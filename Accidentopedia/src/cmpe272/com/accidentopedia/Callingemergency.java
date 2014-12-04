@@ -162,6 +162,7 @@ public class Callingemergency extends Activity {
 				ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
 				if(called==0)
 				{
+					
 					callEmergency();
 					called =1;
 				}
@@ -175,13 +176,11 @@ public class Callingemergency extends Activity {
 	protected void callEmergency() {
 		Log.i("MyActivity", "Caling emergency");
 		Context cont = Callingemergency.this;
-		// Intent callIntent = new Intent(context, intentreciver.class);
-		// context.startService(callIntent);
 		Intent callIntent = new Intent(Intent.ACTION_CALL);
 		callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		callIntent.setData(Uri.parse("tel:6509193890"));
 		// context.Sta(callIntent);
-		Log.i("MyActivity", "Caling Intent");
+		Log.i("Calling 911", "Caling Intent for calling");
 		cont.startActivity(callIntent);
 		// PendingIntent call1 = PendingIntent.getBroadcast(context,
 		// 0,callIntent, 0);

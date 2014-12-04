@@ -71,7 +71,7 @@ public class MainActivity extends ActionBarActivity{
         if (item.getItemId() == R.id.logout) {
             SharedPreferences settings = getSharedPreferences(AppConstants.PREFS_NAME, 0);
             SharedPreferences.Editor editor = settings.edit();
-            editor.remove("uid");
+            editor.remove("id");
             editor.commit();
             finish();
         }
