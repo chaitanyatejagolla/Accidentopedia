@@ -143,7 +143,9 @@ public class Callingemergency extends Activity {
 
 	@SuppressWarnings("deprecation")
 	public void speakText() {
-		while (true) {
+		int f=0;
+		while (f<5) {
+			f++;
 			try {
 				Thread.sleep(11000);
 			} catch (InterruptedException e) {
