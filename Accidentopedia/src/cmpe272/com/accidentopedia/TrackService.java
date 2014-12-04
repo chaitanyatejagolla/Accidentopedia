@@ -35,7 +35,7 @@ public class TrackService extends Service implements LocationListener {
 	protected LocationManager locationManager;
     protected LocationListener locationListener;
     TextToSpeech ttobj;
-    
+    int ttobjinitialised=0;
     String lat;
     String provider;
     protected String latitude, longitude;
@@ -63,6 +63,7 @@ public class TrackService extends Service implements LocationListener {
 								ttobj.setLanguage(Locale.UK);
 								Log.i("TexttoSpeect Enabled", "In Looop");
 								// speakText();
+								ttobjinitialised = 1;
 							}
 						}
 					});
@@ -194,6 +195,11 @@ public class TrackService extends Service implements LocationListener {
 	    noti.flags |= Notification.FLAG_AUTO_CANCEL;
 	    notificationManager.notify(0, noti);
 	    // Speak here/
+	    while(ttobjinitialised!=1)
+	    {
+	    	Log.d("loca", "While loop");
+	    }
+	    
 	    ttobj.speak(strSpeak, TextToSpeech.QUEUE_FLUSH, null);
 	    Intent in = new Intent();
 	    in.putExtra("loc", loc);

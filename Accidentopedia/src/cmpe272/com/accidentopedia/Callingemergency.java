@@ -26,7 +26,7 @@ public class Callingemergency extends Activity {
 	TextToSpeech ttobj;
 	double lat;
 	double lng;
-	int called;
+	int called=0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -160,9 +160,10 @@ public class Callingemergency extends Activity {
 						Toast.LENGTH_SHORT).show();
 
 				ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-				if(called==1)
+				if(called==0)
 				{
 					callEmergency();
+					called =1;
 				}
 
 			}
